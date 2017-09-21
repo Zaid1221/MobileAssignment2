@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zaidjavaid.currencyconverter.MainActivity">
+
+    <TextView
+        android:id="@+id/USD_Label"
+        style="@style/USD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:text="USD" />
+
+    <TextView
+        android:id="@+id/Pounds_Label"
+        style="@style/Pound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pounds"
+        android:layout_marginTop="135dp"
+        android:layout_below="@+id/USD_Amount"
+        android:layout_alignLeft="@+id/USD_Label"
+        android:layout_alignStart="@+id/USD_Label" />
+
+    <EditText
+        android:id="@+id/USD_Amount"
+        android:hint="Enter USD Amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/USD_Label"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/button_Convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="calculate"
+        android:text="Convert"
+        android:layout_above="@+id/Pound_Amount"
+        android:layout_alignRight="@+id/Pound_Amount"
+        android:layout_alignEnd="@+id/Pound_Amount"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="42dp" />
+
+    <TextView
+        android:id="@+id/Pound_Amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100sp"
+        android:minHeight="30dp"
+        android:layout_alignBaseline="@+id/Pounds_Label"
+        android:layout_alignBottom="@+id/Pounds_Label"
+        android:layout_alignRight="@+id/USD_Amount"
+        android:layout_alignEnd="@+id/USD_Amount"
+        android:layout_marginRight="54dp"
+        android:layout_marginEnd="54dp" />
+</RelativeLayout>
+
+
+
