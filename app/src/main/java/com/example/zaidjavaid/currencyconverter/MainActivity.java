@@ -14,7 +14,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Converter converter;
+    private Converter converter;     //creating instance of converter class
     public NumberFormat money = NumberFormat.getCurrencyInstance( );
     private EditText USD_Amount;
     private TextView Pound_Amount;
@@ -28,20 +28,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate(View v){
 
-        USD_Amount = (EditText) findViewById(R.id.USD_Amount);
-        Pound_Amount = (TextView) findViewById(R.id.Pound_Amount);
+        USD_Amount = (EditText) findViewById(R.id.USD_Amount);          //gets value of USD amount for user
+        Pound_Amount = (TextView) findViewById(R.id.Pound_Amount);  //gets empty value of Pounds
 
-        String USDString = USD_Amount.getText().toString();
+        String USDString = USD_Amount.getText().toString();      //makes the amount of USD into a string
 
-        double dollars = Double.parseDouble(USDString);
+        double dollars = Double.parseDouble(USDString);         //parses the string to a double
 
-        converter.setUSD(dollars);
+        converter.setUSD(dollars);      
 
-        double pounds = converter.calculate();
+        double pounds = converter.calculate(); //runs the converting calculation
 
-        NumberFormat GBP = NumberFormat.getCurrencyInstance(Locale.UK);
+        NumberFormat GBP = NumberFormat.getCurrencyInstance(Locale.UK); //formatting the answer to pounds 
 
-        Pound_Amount.setText(GBP.format(pounds));
+        Pound_Amount.setText(GBP.format(pounds));    //setting the pound amount to the field 
     }
 }
 
